@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="custom">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<meta property="og:title" content="RFFR" />
+		<meta property="og:description" content="A candidate-powered recruiting platform" />
+		<meta property="og:site_name" content="RFFR" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://rffr.xyz" />
+		<meta name="image" property="og:image" content="%sveltekit.assets%/images/social.png" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:alt" content="Refer friends to awesome jobs and get paid." />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:image:alt" content="Refer friends to awesome jobs and get paid." />
+		<meta name="twitter:site" content="@devstein64" />
+
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" type="image/png" />
+
+		<title>RFFR</title>
+		<meta name="description" content="A candidate-powered recruiting platform" />
+
+		%sveltekit.head%
+	</head>
+	<script>
+		// heap analytics
+		(window.heap = window.heap || []),
+			(heap.load = function (e, t) {
+				(window.heap.appid = e), (window.heap.config = t = t || {});
+				var r = document.createElement('script');
+				(r.type = 'text/javascript'),
+					(r.async = !0),
+					(r.src = 'https://cdn.heapanalytics.com/js/heap-' + e + '.js');
+				var a = document.getElementsByTagName('script')[0];
+				a.parentNode.insertBefore(r, a);
+				for (
+					var n = function (e) {
+							return function () {
+								heap.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+							};
+						},
+						p = [
+							'addEventProperties',
+							'addUserProperties',
+							'clearEventProperties',
+							'identify',
+							'resetIdentity',
+							'removeEventProperty',
+							'setEventProperties',
+							'track',
+							'unsetEventProperty'
+						],
+						o = 0;
+					o < p.length;
+					o++
+				)
+					heap[p[o]] = n(p[o]);
+			});
+
+		// production
+		if (window.location.hostname !== 'localhost') {
+			heap.load('3686446952');
+		} else {
+			// development
+			heap.load('101906120');
+		}
+	</script>
+
+	<body>
+		<div class="h-screen bg-base-100 text-base-content">%sveltekit.body%</div>
+	</body>
+</html>
